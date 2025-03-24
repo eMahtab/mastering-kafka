@@ -28,5 +28,6 @@ Producer idempotence ensures that duplicates are not introduced due to unexpecte
 When **enable.idempotence** is set to true, **each producer gets assigned a Producer Id (PID) and the PIDis included every time a producer sends messages to a broker**. Additionally, each message gets a monotonically increasing sequence number (different from the offset - used only for protocol purposes). A separate sequence is maintained for each topic partition that a producer sends messages to. On the broker side, on a per partition basis, it keeps track of the largest PID-Sequence Number combination that is successfully written. When a lower sequence number is received, it is discarded.
 
 > How should Kafka producer idempotence be enabled?
+
 > Now the Default
 > **Starting with Kafka 3.0, producer are by default having enable.idempotence=true and acks=all**
