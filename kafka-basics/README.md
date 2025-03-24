@@ -8,6 +8,7 @@
 
 ## 4. [Consumer Group](https://github.com/eMahtab/mastering-kafka/blob/main/kafka-basics/consumer-group.md)
 
+## 5. [Kafka Producer Message Acknowledgement](https://github.com/eMahtab/mastering-kafka/blob/main/kafka-basics/producer-message-acknowledgement.md)
 
 
 
