@@ -25,3 +25,6 @@ When acks=1 , producers consider messages as "written successfully" when the mes
 The message receipt is only acknowledged by the leader in the Kafka replication setup.
 
 **Leader response is requested, but replication is not a guarantee as it happens in the background. If an ack is not received, the producer may retry the request. If the leader broker goes offline unexpectedly but replicas haven’t replicated the data yet, we have a data loss.**
+
+## acks = all
+When acks=all, producers consider messages as "written successfully" when the message is accepted by all in-sync replicas (ISR).
