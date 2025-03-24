@@ -28,3 +28,5 @@ The message receipt is only acknowledged by the leader in the Kafka replication 
 
 ## acks = all
 When acks=all, producers consider messages as "written successfully" when the message is accepted by all in-sync replicas (ISR).
+
+!["acks all"](images/acks/acks-all.jpg)
