@@ -19,3 +19,9 @@ This 'fire-and-forget' approach is only useful for scenarios where it is OK to p
 If the broker goes offline or an exception happens, we won’t know and will lose data. This is useful for data where it’s okay to potentially lose messages, such as metrics collection, and produces the highest throughput setting because the network overhead is minimized.
 
 
+## acks = 1
+When acks=1 , producers consider messages as "written successfully" when the message was acknowledged by only the leader.
+
+The message receipt is only acknowledged by the leader in the Kafka replication setup.
+
+**Leader response is requested, but replication is not a guarantee as it happens in the background. If an ack is not received, the producer may retry the request. If the leader broker goes offline unexpectedly but replicas haven’t replicated the data yet, we have a data loss.**
