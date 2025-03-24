@@ -32,4 +32,5 @@ When acks=all, producers consider messages as "written successfully" when the me
 !["acks all"](images/acks/acks-all.jpg)
 
 > Popular Configuration
- acks=all and min.insync.replicas=2 is the most popular option for data durability and availability and allows you to withstand at most the loss of one Kafka broker
+
+> acks=all and min.insync.replicas=2 is the most popular option for data durability and availability and allows you to withstand at most the loss of one Kafka broker
