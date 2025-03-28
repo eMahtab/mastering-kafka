@@ -1,5 +1,7 @@
 # Kafka Consumer Group
 
+https://github.com/eMahtab/mastering-kafka/blob/main/kafka-basics/consumer-group.md
+
 ## Benefits of Kafka Consumer Group over individual consumers :
 
 ### Scalability
