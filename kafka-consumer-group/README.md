@@ -43,6 +43,34 @@ public class Producer {
 }
 ```
 
+## Consumers in consumer group
+
+```java
+public class Consumer {
+
+    private static final String TOPIC = "test-topic";
+
+    public static void startConsumer() {
+        Properties props = new Properties();
+        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, "test-consumer-group");
+        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+
+        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
+        consumer.subscribe(Collections.singletonList(TOPIC));
+
+        while (true) {
+            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+            for (ConsumerRecord<String, String> record : records) {
+                System.out.println(Thread.currentThread().getName() + " Consumed: " + record.value() + " from partition " + record.partition());
+            }
+        }
+    }
+
+}
+```
 ### Topic with 1000 Partitions
 
 !["Test Topic with 1000 Partitions"](images/test-topic.jpg)
