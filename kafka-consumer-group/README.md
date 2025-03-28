@@ -10,3 +10,7 @@ If you add more partitions or consumers, Kafka automatically balances the worklo
 
 With individual consumers, you must manually distribute the workload.
 
+### Fault Tolerance
+
+If one consumer in a group fails, Kafka redistributes its partitions to the remaining consumers, ensuring continuous processing.
+
