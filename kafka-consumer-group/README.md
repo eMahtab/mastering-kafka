@@ -16,8 +16,8 @@ If one consumer in a group fails, Kafka redistributes its partitions to the rema
 
 ### Topic with 1000 Partitions
 
-!["Test Topic with 1000 Partitions"](test-topic.jpg)
+!["Test Topic with 1000 Partitions"](images/test-topic.jpg)
 
 ### Consumer group with 250 Consumers
 
-!["Consumer group with 250 Consumers"](test-consumer-group.jpg)
+!["Consumer group with 250 Consumers"](images/test-consumer-group.jpg)
