@@ -5,5 +5,6 @@
 
 ## 2. [Kafka Simple Producer Consumer](https://github.com/eMahtab/mastering-kafka/tree/main/simple-producer-consumer)
 
-## 3. [Kafka Message size
-](https://github.com/eMahtab/mastering-kafka/tree/main/kafka-producer-message-size)
+## 3. [Kafka Message size](https://github.com/eMahtab/mastering-kafka/tree/main/kafka-producer-message-size)
+
+## 4. [Kafka Consumer Group](https://github.com/eMahtab/mastering-kafka/tree/main/kafka-consumer-group)
