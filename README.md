@@ -8,3 +8,5 @@
 ## 3. [Kafka Message size](https://github.com/eMahtab/mastering-kafka/tree/main/kafka-producer-message-size)
 
 ## 4. [Kafka Consumer Group](https://github.com/eMahtab/mastering-kafka/tree/main/kafka-consumer-group)
+
+## 5. [Kafka Idempotent Consumer](https://github.com/eMahtab/mastering-kafka/tree/main/kafka-idempotent-consumer)
