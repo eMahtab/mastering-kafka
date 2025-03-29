@@ -39,6 +39,16 @@
 
 !["Orders topic"](images/orders-topic.jpg)
 
+## Create the processed_order_messages table under orders db:
+
+We are using processed_order_messages to store the order ids once the consumer processes it.
+
+```sql
+CREATE TABLE processed_order_messages (
+    order_id VARCHAR(255) PRIMARY KEY
+);
+```
+
 ## processed_order_messages table :
 
 !["Processed Order Messages Table"](images/processed_order_messages.jpg)
