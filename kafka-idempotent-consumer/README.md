@@ -34,11 +34,6 @@
 
     </dependencies>
 ```
-
-## orders-topic :
-
-!["Orders topic"](images/orders-topic.jpg)
-
 ## Create the processed_order_messages table under orders db:
 
 We are using processed_order_messages to store the order ids once the consumer processes it.
@@ -49,7 +44,44 @@ CREATE TABLE processed_order_messages (
 );
 ```
 
-## processed_order_messages table :
+## Run ProduceOrders :
+
+Run the ProduceOrders class , it will publish 10,000 orders in orders-topic.
+
+```java
+public class ProduceOrders {
+
+    public static void main(String[] args) {
+        IdempotentOrderProducer producer = new IdempotentOrderProducer();
+
+        producer.produceOrders(10000);
+    }
+}
+```
+
+## Verify orders in orders-topic :
+
+!["Orders topic"](images/orders-topic.jpg)
+
+## Run ConsumeOrders :
+
+Run the ConsumeOrders class, it will consume orders one by one, if an order is already processed (order id already exist in processed_order_messages table), it won't be processed again by consumer.
+
+```java
+public class ConsumeOrders {
+
+    public static void main(String[] args) {
+
+        OrderIdempotenceService orderIdempotenceService = new OrderIdempotenceService();
+        IdempotentOrderConsumer consumer = new IdempotentOrderConsumer(orderIdempotenceService);
+
+        consumer.consumeOrders();
+    }
+}
+```
+
+
+## Verify order ids in processed_order_messages table :
 
 !["Processed Order Messages Table"](images/processed_order_messages.jpg)
 
